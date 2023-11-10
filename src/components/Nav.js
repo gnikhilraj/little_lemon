@@ -2,14 +2,16 @@ import React from "react";
 import Homepage from './Homepage';
 import BookingPage from "./BookingPage";
 import { BrowserRouter } from "react-router-dom";
+import './Nav.css'
 import {Routes , Route} from "react-router-dom";
 
 function Nav(){
     return (
         <>
         <nav>
-        <img src="" alt="logo"/>
         <ul>
+        <img src="" alt="logo"/>
+        
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/menu">Menu</a></li>
@@ -17,6 +19,7 @@ function Nav(){
             <li><a href="/order">Order Online</a></li>
             <li><a href="/login">Login</a></li>
         </ul>
+        </nav>
 
 
             <BrowserRouter>
@@ -25,7 +28,7 @@ function Nav(){
     <Route path="/bookingpage" element={<BookingPage />}></Route>
 </Routes>
 </BrowserRouter>
-        </nav>
+       
         </>
     );
 }

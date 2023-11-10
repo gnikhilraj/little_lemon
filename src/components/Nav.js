@@ -1,15 +1,19 @@
+import React from "react";
+import Homepage from './Homepage';
+import BookingPage from "./BookingPage";
+import { BrowserRouter } from "react-router-dom";
+import {Routes , Route} from "react-router-dom";
+
 function Nav(){
     return (
         <>
         <nav>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Menu</a></li>
-                <li><a href="">Reservations</a></li>
-                <li><a href="">Order Online</a></li>
-                <li><a href="">Login</a></li>
-            </ul>
+            <BrowserRouter>
+        <Routes> 
+    <Route path="/" element={<Homepage />}></Route>
+    <Route path="/booking" element={<BookingPage />}></Route>
+</Routes>
+</BrowserRouter>
         </nav>
         </>
     );

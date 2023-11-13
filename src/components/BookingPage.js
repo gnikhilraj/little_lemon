@@ -1,7 +1,11 @@
+import BookingForm from './BookingForm'
+
+
 function BookingPage(){
     return(
      <>
-     This is BookingPage</>  
+     <BookingForm/>
+     </>  
     )
 }
 

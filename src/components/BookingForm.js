@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+// BookingForm.js
 
-function BookingForm() {
-  // State variables
-  const [selectedDate, setSelectedDate] = useState("");
-  const [selectedTime, setSelectedTime] = useState("");
-  const [numberOfGuests, setNumberOfGuests] = useState(1);
-  const [selectedOccasion, setSelectedOccasion] = useState("");
+import React, { useState } from 'react';
+import Main from './Main';
+
+function BookingForm(props) {
   
-  // State variable for available times
-  const [availableTimes] = useState([
-    "17:00", "18:00", "19:00", "20:00", "21:00", "22:00"
-  ]);
+
+  
+
+  // State variables
+  const [selectedDate, setSelectedDate] = useState('');
+  const [selectedTime, setSelectedTime] = useState('');
+  const [numberOfGuests, setNumberOfGuests] = useState(1);
+  const [selectedOccasion, setSelectedOccasion] = useState('');
 
   // Event handlers
   const handleDateChange = (event) => {
@@ -47,15 +49,17 @@ function BookingForm() {
           value={selectedTime}
           onChange={handleTimeChange}
         >
-          {availableTimes.map((time, index) => (
+          {props.availableTimes.map((time, index) => (
             <option key={index}>{time}</option>
           ))}
+
         </select>
+        {console.log(props.availableTimes)}
+        
 
         <label htmlFor="guests">Number of guests</label>
         <input
           type="range"
-          placeholder="1"
           min="1"
           max="10"
           id="guests"
@@ -76,6 +80,8 @@ function BookingForm() {
 
         <input type="submit" value="Make Your reservation" />
       </form>
+      
+
     </>
   );
 }

@@ -4,6 +4,7 @@ import BookingPage from "./BookingPage";
 import { BrowserRouter, Link ,Routes , Route} from "react-router-dom";
 import './Nav.css'
 import {} from "react-router-dom";
+import BookingForm from "./BookingForm";
 
 function Nav(){
     return (
@@ -25,7 +26,7 @@ function Nav(){
             <BrowserRouter>
         <Routes> 
     <Route path="/" element={<Homepage />}></Route>
-    <Route path="/bookingpage" element={<BookingPage />}></Route>
+    <Route path="/bookingpage" element={<BookingPage/>}></Route>
 </Routes>
 </BrowserRouter>
        
